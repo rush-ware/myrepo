@@ -1,10 +1,23 @@
 pipeline {
-    agent { docker { image 'node:22.16.0-alpine3.21' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'node --version'
-            }
-        }
-    }
+agent any
+stages {
+  stage('Checkout') {
+    steps {
+// Checkout code from the Git repository
+     sh 'echo checking out'
+   }
+  }
+stage('Build') {
+  steps {
+// Build the Java application (replace with your build commands)
+  sh 'java -version'
+ }
+}
+stage('Deploy') {
+  steps {
+  // Deploy the application (replace with your deployment commands)
+   sh 'echo "Deploying the application"'
+   }
+  }
+ }
 }
